@@ -1,0 +1,45 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Color Palette Generator</h1>
+            <p>
+                Using <a href="https://www.thecolorapi.com/" target="_blank">The Color API</a>
+            </p>
+        </header>
+        <section class="options-cont">
+            <input type="color" class="color-input" id="seed-color-el">
+            <select id="mode-el">
+                <option value="monochrome">Monochrome</option>
+                <option value="monochrome-dark">Monochrome Dark</option>
+                <option value="monochrome-light">Monochrome Light</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-Complement</option>
+                <option value="triad">Triad</option>
+                <option value="quad">Quad</option>
+            </select>
+            <span>Amount of Colors</span>
+            <div>
+                <label for="slider-input" id="slider-label-el">5</label>
+                <input 
+                    class="slider-input"
+                    id="count-slider-el"
+                    name="slider-input"
+                    type="range"
+                    min="2"
+                    max="8">
+            </div>
+            <button class="generate-btn" id="generate-btn">Generate Colors</button>
+        </section>
+        <section class="color-el-cont hidden" id="color-el-cont">
+            <!-- COLOR STUFF HERE -->
+        </section>
+        <script src="index.js"></script>
+    </body>
+</html>

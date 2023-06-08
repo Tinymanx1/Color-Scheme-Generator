@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #121a24;
+    color: whitesmoke;
+    font-family: 'Lato', sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* HEADER START*/
+header {
+    text-align: center;
+    background: #2a374a;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    color: whitesmoke;
+}
+
+header p {
+    margin: 0;
+    color: lightgrey;
+}
+
+a,
+a:visited {
+    color: #708db5;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: #7d9dc9;
+    text-shadow: 0 0 2px #708db5;
+}
+/* HEADER END*/
+
+/* OPTIONS START */
+.options-cont {
+    display: flex;
+    flex-direction: column;
+    background: #1F2937;
+    padding: 10px 0 20px;
+}
+
+.options-cont input,
+.options-cont button,
+.options-cont select,
+.options-cont span {
+    margin: 10px auto 6px;
+    color: whitesmoke;
+    font-size: 1.1em;
+}
+
+.options-cont input,
+.options-cont button,
+.options-cont select {
+    border-radius: 4px;
+    background-color: #4e6482;
+    text-shadow: 0 0 5px black;
+    cursor: pointer;
+}
+
+.color-input {
+    width: 5em;
+    height: 3em;
+    padding: 0 1px;
+}
+
+select {
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid #708db5;
+    text-align: center;
+    padding: 10px;
+}
+
+/* SLIDER AND LABEL START*/
+    .options-cont div {
+        position: relative;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .options-cont div label {
+        position: absolute;
+        left: -20px;
+        top: 8px;
+    }
+    .slider-input {
+        appearance: none;
+        width: 100%;
+        height: 15px;
+        background: #2a374a;
+        outline: none !important;
+        opacity: 0.7;
+        transition: translate .2s;
+        user-select: none;
+    }
+    
+    .slider-input::-webkit-slider-thumb {
+        appearance: none;
+        width: 25px; 
+        height: 25px; 
+        background: #799ac7;
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+        border-radius: 4px;
+    }
+    
+    .slider-input:hover {
+        opacity: 1;
+    }
+    /* SLIDER AND LABEL END*/
+
+.generate-btn {
+    width: 80%;
+    max-width: 400px;
+    height: 3em;
+    border: 2px solid #708db5;
+    transition: transform .2s;
+}
+
+.generate-btn:active,
+.generate-btn:hover {
+    transform: scale(1.05);
+    transition: transform .2s;
+    box-shadow: 0 0 10px #708db5;
+}
+/* OPTIONS END */
+
+    /* CONTAINER FOR GRID START*/
+    .color-el-cont {
+        width: fit-content;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #708db5;
+        border-radius: 6px;
+        background-color: #1F2937;
+    }
+    /* CONTAINER FOR GRID END*/
+
+.color-el {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 75px;
+}
+
+.generated-color {
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.generated-color:hover,
+.generated-color:active {
+    transform: scale(1.03)
+}
+
+.color-el p {
+    padding-top: 10px;
+    text-align: center;
+    min-width: 100px;
+}
+
+@media (min-width: 768px) {
+    
+    header {
+        padding: 30px 0;
+    }
+    
+    header h1 {
+        margin: 0 0 10px;
+        font-size: 2.3em;
+    }
+    
+    header p {
+        font-size: 1.2em;
+    }
+    
+    /* OPTIONS START */
+        .options-cont {
+            display: grid;
+            justify-content: center;
+            grid-template-areas: "color list slider"
+                                 "button button button";
+            grid-template-columns: minmax(300px, 450px) minmax(300px, 450px) minmax(300px, 450px);
+            grid-row-gap: 1em;
+        }
+        
+        .color-input {
+            grid-area: color;
+        } 
+        
+        .options-cont select {
+            grid-area: list;
+        }
+        
+        .options-cont span {
+            padding-top: 8px;
+        }
+        
+        .options-cont div {
+            padding-top: 26px;
+        }
+        
+        .options-cont div label {
+            top: 46px;
+        }
+        
+        .options-cont div,
+        .options-cont span {
+            grid-area: slider;
+        }
+        
+        .slider-input {
+            transform: translateY(12px)
+        }
+        
+        .generate-btn {
+            grid-area: button;
+            height: 3.75em;
+        }
+        
+    /* OPTIONS END */
+    .color-el-cont {
+        display: flex;
+        height: 500px;
+    }
+    
+    .color-el {
+        grid-template-columns: 100px;
+        grid-template-rows: 2fr 50px;
+    }
+}
+
+
